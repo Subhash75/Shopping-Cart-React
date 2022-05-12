@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div.container {
+  font-size: 16px;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  border: solid;
+  position: relative;
+}
+
+div.container header {
+  margin-top: .5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: green;
+  padding: .3em .5em;
+}
+
+header > div.cart p{
+  font-size: 1.25em;
+  border: solid;
+  padding: .3em .5em;
+  position: relative;
+}
+
+header > div.cart p span {
+  font-size: 1rem;
+  border: solid;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  width: max-content;
+  padding: .1em .3em;
+  display: block;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0); 
+  transform-origin: top center;
+  transition: 100ms all ease;
+}
+
+header > div.cart p span::before {
+  content: '';
+  border: 10px solid transparent;
+  border-top: 10px solid black;
+  position: absolute;
+  left: 50%;
+  bottom: 53%;
+  transform: translateX(-50%);
+}
+
+
+header input {
+  font-size: 1.25em;
+  border-radius: 10px;
+  width: 50%;
+  padding: .3em .5em;
+}
+
+div.container article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+div.vegetable-container {
+  border: solid;
+  border-radius: 5px;
+  background-color: black;
+  width: 30%;
+  margin: 1em .5em;
+}
+
+div.vegetable-container p {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+}
+
+div.vegetable-container img {
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  width: 90%;
+  max-width: 100%;
+}
+
+div.vegetable-container button {
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  margin: .5em auto;
+  padding: .3em .4em;
+}
+
+header > div.cart p:hover span{
+  transform: translateX(-50%) scaleY(1); 
+}
+
+div.container > div.Cart-Overlay {
+  border: solid;
+  background-color: antiquewhite;
+  width: 90%;
+  height: 90vh;
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  overflow: auto;
+}
+
+div.container > div.Cart-Overlay > button {
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: .3em;
+  padding: .2em .4em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.container > div.Cart-Overlay  > div.cart-container {
+  margin: 1em 0;
+}
+
+
+div.container > div.Cart-Overlay  > div.cart-container:first-child {
+  margin-top: 5em;
+}
+div.cart-container  {
+  border: solid;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
