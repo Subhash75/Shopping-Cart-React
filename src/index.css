@@ -5,7 +5,8 @@
 }
 
 div.container {
-  font-size: 16px;
+ 
+  font-size: 20px;
   width: 100%;
   height: auto;
   min-height: 100vh;
@@ -22,7 +23,7 @@ div.container header {
 
 header h1 {
   font-size: 2.5em;
-  color: green;
+  color: #4fed6d;
   padding: .3em .5em;
 }
 
@@ -75,15 +76,14 @@ div.container article {
 }
 
 div.vegetable-container {
-  border: solid;
   border-radius: 5px;
-  background-color: black;
+  background-color: #4fed6d;
   width: 30%;
   margin: 1em .5em;
 }
 
 div.vegetable-container p {
-  color: white;
+  color: #415f8f;
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
@@ -98,6 +98,9 @@ div.vegetable-container img {
 }
 
 div.vegetable-container button {
+  color:  #e1f1ff;
+  background-color: black;
+  border: none;
   border-radius: 5px;
   font-size: 1.1em;
   font-weight: 500;
@@ -107,13 +110,18 @@ div.vegetable-container button {
   padding: .3em .4em;
 }
 
+header > div.cart {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
 header > div.cart p:hover span{
   transform: translateX(-50%) scaleY(1); 
 }
 
 div.container > div.Cart-Overlay {
   border: solid;
-  background-color: antiquewhite;
+  background-color: #4fed6d;
   width: 90%;
   height: 90vh;
   position: fixed;
@@ -144,10 +152,52 @@ div.container > div.Cart-Overlay  > div.cart-container:first-child {
   margin-top: 5em;
 }
 div.cart-container  {
-  border: solid;
+  background-color: #415f8f;
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+div.cart-container p {
+  color: white;
+  font-size: 1.5em;
+  margin-left: 1em;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+div.cart-container button {
+  font-size: 1.1em;
+  padding: .1em .3em;
+  border-radius: 5px;
+  border: none;
+}
+
+@media  screen and (max-width: 992px) {
+  div.container {
+    font-size: 19px;
+  }
+}
+@media  screen and (max-width: 768px) {
+  div.container {
+    font-size: 18px;
+  }
+}
+@media  screen and (max-width: 600px) {
+  div.container {
+    font-size: 17px;
+  }
+  div.container header {
+    flex-flow: row wrap;
+  }
+  header input {
+    width: 100%;
+  }
+}
+@media  screen and (max-width: 400px) {
+  div.container {
+    font-size: 16px;
+  }
 }
