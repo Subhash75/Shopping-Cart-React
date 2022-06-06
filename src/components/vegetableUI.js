@@ -3,7 +3,6 @@ import Vegetable from "./vegetable";
 import Cart from "./cart";
 
 function VegetableUI() {
-  
   const vegetables = [
     "Brinjal",
     "Carrot",
@@ -16,11 +15,11 @@ function VegetableUI() {
     "Cabbage",
     "Beans",
   ];
-  
+
   let [value, setValue] = useState(""); //for input value
   let [cart, showCart] = useState(false); //for showing/ hiding cart
   let [task, addTask] = useState([]);
-  let [mnop, setmnop] = useState("");
+  const [quantity, setQuantity] = useState(0);
 
   const myFun = (event) => {
     setValue(event.target.value);
@@ -37,19 +36,22 @@ function VegetableUI() {
   };
 
   const handleCart = (name) => {
-    setmnop(name);
     addTask(() => {
-      return [...task, name]
-    })
+      return [...task, name];
+    });
   };
 
   const remove = (key) => {
-  addTask(() => task.filter((value, index) => {
-    if(key !== index) {
-      return value;
-    }
-  }))
-  }
+    addTask(() =>
+      task.filter((value, index) => {
+        if (key !== index) {
+          return value;
+        }
+      })
+    );
+  };
+
+ 
 
   return (
     <>
@@ -77,7 +79,9 @@ function VegetableUI() {
       {cart ? (
         <div className="Cart-Overlay">
           {task.map((value, index) => {
-            return <Cart name={value} key={index} index={index} remove={remove} />
+            return (
+              <Cart name={value} key={index} index={index} remove={remove} />
+            );
           })}
           <button onClick={() => showCart(false)}>X</button>
         </div>

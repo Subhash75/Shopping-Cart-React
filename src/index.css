@@ -83,7 +83,7 @@ div.vegetable-container {
 }
 
 div.vegetable-container p {
-  color: #415f8f;
+  color: black;
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
@@ -97,9 +97,8 @@ div.vegetable-container img {
   max-width: 100%;
 }
 
-div.vegetable-container button {
-  color:  #e1f1ff;
-  background-color: black;
+div.vegetable-container > button {
+  background-color: white;
   border: none;
   border-radius: 5px;
   font-size: 1.1em;
@@ -108,6 +107,35 @@ div.vegetable-container button {
   display: block;
   margin: .5em auto;
   padding: .3em .4em;
+}
+
+div.vegetable-container > button:hover {
+  color: white;
+  background-color: black;
+}
+
+div.vegetable-container > div.increment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+
+div.increment > p {
+  background-color: white;
+ padding: 0 .5em;
+ margin: 0 .1em;
+}
+
+div.increment > button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  padding: .3em .5em;
 }
 
 header > div.cart {
@@ -121,7 +149,7 @@ header > div.cart p:hover span{
 
 div.container > div.Cart-Overlay {
   border: solid;
-  background-color: #4fed6d;
+  background-color: white;
   width: 90%;
   height: 90vh;
   position: fixed;
@@ -152,7 +180,7 @@ div.container > div.Cart-Overlay  > div.cart-container:first-child {
   margin-top: 5em;
 }
 div.cart-container  {
-  background-color: #415f8f;
+  background-color: #4fed6d;
   width: 100%;
   height: 10%;
   display: flex;
