@@ -5,32 +5,34 @@
 }
 
 div.container {
- 
   font-size: 20px;
   width: 100%;
   height: auto;
   min-height: 100vh;
-  border: solid;
   position: relative;
 }
 
 div.container header {
-  margin-top: .5em;
+  width: 100%;
+  background-color: #4fed6d;
+  padding: 0.5em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 100;
 }
 
 header h1 {
   font-size: 2.5em;
-  color: #4fed6d;
-  padding: .3em .5em;
+  color: #fff;
+  padding: 0.3em 0.5em;
 }
 
-header > div.cart p{
+header > div.cart p {
   font-size: 1.25em;
   border: solid;
-  padding: .3em .5em;
+  padding: 0.3em 0.5em;
   position: relative;
 }
 
@@ -41,18 +43,18 @@ header > div.cart p span {
   color: white;
   background-color: black;
   width: max-content;
-  padding: .1em .3em;
+  padding: 0.1em 0.3em;
   display: block;
   position: absolute;
   top: 125%;
   left: 50%;
-  transform: translateX(-50%) scaleY(0); 
+  transform: translateX(-50%) scaleY(0);
   transform-origin: top center;
   transition: 100ms all ease;
 }
 
 header > div.cart p span::before {
-  content: '';
+  content: "";
   border: 10px solid transparent;
   border-top: 10px solid black;
   position: absolute;
@@ -61,33 +63,61 @@ header > div.cart p span::before {
   transform: translateX(-50%);
 }
 
-
 header input {
   font-size: 1.25em;
   border-radius: 10px;
   width: 50%;
-  padding: .3em .5em;
+  padding: 0.3em 0.5em;
 }
 
 div.container article {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  position: absolute;
+  top: 25%;
 }
 
-div.vegetable-container {
+div.vegetable-container{
+  background-color: #fff;
   border-radius: 5px;
-  background-color: #4fed6d;
-  width: 30%;
-  margin: 1em .5em;
+  border-bottom: solid rgba(137, 137, 137, 0.2);
+  width: 100%;
+  padding-bottom: 1.5em;
+  margin: 1em 0.5em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-div.vegetable-container p {
-  color: black;
-  font-size: 1.5em;
-  font-weight: 600;
-  text-align: center;
+div.vegetable-container > div.veg-description {
+  width: 45%;
+  float: left;
+  flex-shrink: 0;
 }
+
+div.vegetable-container > div.veg-description > p.veg-name {
+  color: rgba(44, 44, 44, 1);
+  font-size: 1.8em;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+div.vegetable-container > div.veg-description > p.veg-price {
+  color: rgba(44, 44, 44, 1);
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  margin: .5em 0;
+}
+
+div.vegetable-container > div.veg-description > p.veg-desc {
+  color: rgba(137, 137, 137, 1);
+  font-size: 15px;
+  margin: .5em 0;
+}
+
 
 div.vegetable-container img {
   border-radius: 10px;
@@ -95,6 +125,12 @@ div.vegetable-container img {
   margin: auto;
   width: 90%;
   max-width: 100%;
+  flex-shrink: 0;
+  
+  /* position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%); */
 }
 
 div.vegetable-container > button {
@@ -105,8 +141,8 @@ div.vegetable-container > button {
   font-weight: 500;
   letter-spacing: 1px;
   display: block;
-  margin: .5em auto;
-  padding: .3em .4em;
+  margin: 0.5em auto;
+  padding: 0.3em 0.4em;
 }
 
 div.vegetable-container > button:hover {
@@ -114,28 +150,38 @@ div.vegetable-container > button:hover {
   background-color: black;
 }
 
-div.vegetable-container > div.increment {
+div.veg-img {
+  position: relative;
+}
+
+div.vegetable-container  div.quantity {
+  background-color: #4fed6d;
+  color: white;
+  border: solid transparent;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-div.increment > p {
-  background-color: white;
- padding: 0 .5em;
- margin: 0 .1em;
+div.quantity > p {
+  padding: 0 0.5em;
+  margin: 0 0.1em;
 }
 
-div.increment > button {
-  background-color: white;
+div.quantity > button {
+  color: white;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 500;
   letter-spacing: 1px;
   display: block;
-  padding: .3em .5em;
+  padding: 0.3rem 0.8rem;
 }
 
 header > div.cart {
@@ -143,8 +189,8 @@ header > div.cart {
   margin-right: 1em;
 }
 
-header > div.cart p:hover span{
-  transform: translateX(-50%) scaleY(1); 
+header > div.cart p:hover span {
+  transform: translateX(-50%) scaleY(1);
 }
 
 div.container > div.Cart-Overlay {
@@ -156,7 +202,7 @@ div.container > div.Cart-Overlay {
   z-index: 5;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   overflow: auto;
 }
 
@@ -164,22 +210,21 @@ div.container > div.Cart-Overlay > button {
   border-radius: 50%;
   font-size: 1.5em;
   font-weight: 900;
-  margin: .3em;
-  padding: .2em .4em;
+  margin: 0.3em;
+  padding: 0.2em 0.4em;
   position: absolute;
   top: 0;
   right: 0;
 }
 
-div.container > div.Cart-Overlay  > div.cart-container {
+div.container > div.Cart-Overlay > div.cart-container {
   margin: 1em 0;
 }
 
-
-div.container > div.Cart-Overlay  > div.cart-container:first-child {
+div.container > div.Cart-Overlay > div.cart-container:first-child {
   margin-top: 5em;
 }
-div.cart-container  {
+div.cart-container {
   background-color: #4fed6d;
   width: 100%;
   height: 10%;
@@ -198,22 +243,37 @@ div.cart-container p {
 
 div.cart-container button {
   font-size: 1.1em;
-  padding: .1em .3em;
+  padding: 0.1em 0.3em;
   border-radius: 5px;
   border: none;
 }
 
-@media  screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
   div.container {
     font-size: 19px;
   }
+  div.vegetable-container {
+    width: 30%;
+    flex-flow: column wrap;
+    padding-right: .5em;
+  }
+  div.vegetable-container > div.veg-description {
+    order: 2;
+    margin-top: 1.5em;
+    border: solid;
+    width: 100%;
+    text-align: center;
+  }
+  div.vegetable-container > div.veg-img {
+    order: 1;
+  }
 }
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   div.container {
     font-size: 18px;
   }
 }
-@media  screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   div.container {
     font-size: 17px;
   }
@@ -224,7 +284,7 @@ div.cart-container button {
     width: 100%;
   }
 }
-@media  screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
   div.container {
     font-size: 16px;
   }
