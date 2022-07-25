@@ -1,12 +1,18 @@
 import React from "react";
 
-function Cart({ name, price, remove, index }) {
+function Cart({ name, price, originalPrice, remove, index, image }) {
   return (
     <>
       <div className="cart-container">
-        <p>{name}</p>
-        <p>{price}</p>
-        <button onClick={() => remove(index)}>Remove from Cart</button>
+        <div>
+          <img src={image}></img>
+          <div>
+            <p>{name}</p>
+            <p>₹{originalPrice}/kg</p>
+            <button onClick={() => remove(index)}>Remove</button>
+          </div>
+        </div>
+        <p>₹{price}</p>
       </div>
     </>
   );

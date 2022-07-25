@@ -5,20 +5,22 @@ function Vegetable({ name, price, image, index, handleCart }) {
   let priceTag = price.substring(0, 3);
   priceTag = priceTag.substring(1);
 
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
 
   const increment = () => {
     if (quantity >= 10) {
       return;
     }
     setQuantity(quantity + 1);
+    handleCart({ image: image, title: name, cost: priceTag * (quantity + 1), originalPrice: priceTag });
   };
 
   const decrement = () => {
-    if (quantity <= 1) {
+    if (quantity <= 0) {
       return;
     }
     setQuantity(quantity - 1);
+    handleCart({ title: name, cost: priceTag * (quantity - 1), originalPrice: priceTag });
   };
 
   return (
@@ -41,12 +43,6 @@ function Vegetable({ name, price, image, index, handleCart }) {
             <button onClick={increment}>+</button>
           </div>
         </div>
-
-        {/* <button work on view cart
-          onClick={() => handleCart({ title: name, cost: priceTag * quantity })}
-        >
-          Add to Cart
-        </button> */}
       </div>
     </>
   );
