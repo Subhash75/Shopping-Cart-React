@@ -1,11 +1,11 @@
 import React from "react";
 
-function FooterViewCart({ length, totalCost, cartOpen }) {
+function FooterViewCart({ length, totalCost, openTheCart }) {
   return (
     <div className="footer">
-      <p>{totalCost}</p>
+      <p>₹ {totalCost}</p>
       <p>{length} items</p>
-      <button onClick={cartOpen}>View Cart</button>
+      <button onClick={openTheCart}>View Cart</button>
     </div>
   );
 }

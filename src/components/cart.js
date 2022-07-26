@@ -1,19 +1,37 @@
 import React from "react";
+import CartContainer from "./cartContainer";
 
-function Cart({ name, price, originalPrice, remove, index, image }) {
+function Cart({ cart, length, closeCart, addToCart, remove }) {
   return (
     <>
-      <div className="cart-container">
-        <div>
-          <img src={image}></img>
-          <div>
-            <p>{name}</p>
-            <p>₹{originalPrice}/kg</p>
-            <button onClick={() => remove(index)}>Remove</button>
+      {cart ? (
+        <div className="main-cart">
+          <div className="Cart-Overlay">
+            <div className="card-title">
+              <div>
+                <p>My Cart ({length})</p>
+                <p>
+                  Pincode: <b>380015</b>
+                </p>
+              </div>
+              <button onClick={closeCart}>Close</button>
+            </div>
+            {addToCart.map((value, index) => {
+              return (
+                <CartContainer
+                  image={value.image}
+                  name={value.title}
+                  price={value.cost}
+                  originalPrice={value.originalPrice}
+                  key={index}
+                  index={index}
+                  remove={remove}
+                />
+              );
+            })}
           </div>
         </div>
-        <p>₹{price}</p>
-      </div>
+      ) : null}
     </>
   );
 }
