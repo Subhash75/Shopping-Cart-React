@@ -32,7 +32,6 @@ header > h1 {
 }
 
 header > div.cart {
-  margin-left: auto;
   margin-right: 1em;
 }
 
@@ -533,7 +532,6 @@ div.footer button {
   }
   div.container header > div {
     text-align: right;
-    flex: 0 0 45%;
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -541,5 +539,12 @@ div.footer button {
   
   header input {
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  div.container {
+    font-size: 13px;
   }
 }
